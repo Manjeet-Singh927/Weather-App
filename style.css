@@ -1,0 +1,54 @@
+* Add this at the top of your style.css */
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+ /* Then add your custom styles */
+ @keyframes float {
+     0% { transform: translateY(0px); }
+     50% { transform: translateY(-10px); }
+     100% { transform: translateY(0px); }
+ }
+ 
+ .weather-icon {
+     animation: float 3s ease-in-out infinite;
+ }
+ 
+ .card-bg {
+     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border-radius: 20px;
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+ }
+ 
+ .gradient-bg {
+     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+     background-size: 400% 400%;
+     animation: gradient 15s ease infinite;
+ }
+ 
+ @keyframes gradient {
+     0% { background-position: 0% 50%; }
+     50% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+ }
+ 
+ .search-input:focus {
+     outline: none;
+     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+ }
+ 
+ .loading-spinner {
+     border: 3px solid rgba(255, 255, 255, 0.3);
+     border-radius: 50%;
+     border-top: 3px solid #fff;
+     width: 20px;
+     height: 20px;
+     animation: spin 1s linear infinite;
+ }
+ 
+ @keyframes spin {
+     0% { transform: rotate(0deg); }
+     100% { transform: rotate(360deg); }
+ }
